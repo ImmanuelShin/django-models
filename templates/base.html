@@ -1,0 +1,33 @@
+{% load compress %}
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>{% block title %}My Site{% endblock %}</title>
+        {% compress css %}
+        <link rel="stylesheet" href="{% static 'src/output.css' %}">
+        {% endcompress %}
+    </head>
+    <body>
+        <header>
+            <h1>{% block header %}My Site Header{% endblock %}</h1>
+            <!-- Add any common header content here -->
+        </header>
+
+        <nav>
+            <!-- Add your navigation menu here if applicable -->
+        </nav>
+
+        <main>
+            {% block content %}{% endblock %}
+        </main>
+
+        <footer>
+            <!-- Add your common footer content here -->
+        </footer>
+        <!-- Add your common scripts, etc. here -->
+    </body>
+</html>

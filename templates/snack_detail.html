@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block title %}Snack Detail - {{ snack.name }}{% endblock %}
+
+{% block header %}Snack Detail Header{% endblock %}
+
+{% block content %}
+    <h2>Snack Details</h2>
+    <p>Name: {{ snack.name }}</p>
+    <p>Description: {{ snack.description }}</p>
+    <p>Purchaser: {{ snack.reviewer.username }}</p>
+
+    <p><a href="{% url 'snack_list' %}">Back to Snack List</a></p>
+
+{% endblock %}
