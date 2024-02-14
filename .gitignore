@@ -7,7 +7,6 @@ ENV/
 .DS_Store
 .history
 
-
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
@@ -66,6 +65,7 @@ coverage.xml
 .static_storage/
 .media/
 local_settings.py
+db.sqlite3
 
 # Flask stuff:
 instance/
@@ -120,3 +120,7 @@ node_modules/
 
 # poetry
 poetry.lock
+
+# Tailwind CSS
+static/CACHE/
+static/src/output.css

@@ -2,16 +2,23 @@
 
 {% block title %}Snack List{% endblock %}
 
-{% block header %}Snack List Header{% endblock %}
+{% block header %}
+    <div style="margin-left: 20px;">Snack List</div>
+{% endblock %}
 
 {% block content %}
-    <h2>Snack List</h2>
-    <ul>
-        {% for snack in snacks %}
-            <li>
-                <a href="{% url 'snack_detail' pk=snack.pk %}">{{ snack.name }}</a>
-            </li>
-        {% endfor %}
-    </ul>
-    <!-- Add any additional content for the snack list page -->
+    <div class="grid place-items-center h-screen bg-blue-500">
+        <div class="text-center">
+            <ul>
+                {% for snack in snacks %}
+                    <li class="mb-2">
+                        <a href="{% url 'snack_detail' pk=snack.pk %}" class="w-full bg-blue-400 hover:bg-blue-300 text-white py-2 px-4 rounded-full inline-block transition-colors duration-300">
+                            {{ snack.name }}
+                        </a>
+                    </li>
+                {% endfor %}
+            </ul>
+            <!-- Add any additional content for the snack list page -->
+        </div>
+    </div>
 {% endblock %}

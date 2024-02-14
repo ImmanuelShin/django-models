@@ -2,14 +2,19 @@
 
 {% block title %}Snack Detail - {{ snack.name }}{% endblock %}
 
-{% block header %}Snack Detail Header{% endblock %}
+{% block header %}
+    <div style="margin-left: 20px;">Snack Details</div>
+{% endblock %}
 
 {% block content %}
-    <h2>Snack Details</h2>
-    <p>Name: {{ snack.name }}</p>
-    <p>Description: {{ snack.description }}</p>
-    <p>Purchaser: {{ snack.reviewer.username }}</p>
-
-    <p><a href="{% url 'snack_list' %}">Back to Snack List</a></p>
-
+    <div class="grid place-items-center h-screen bg-blue-500">
+        <div class="text-center text-white border rounded p-4">
+            <p>Name: {{ snack.name }}</p>
+            <p>Description: {{ snack.description }}</p>
+            <p>Purchaser: {{ snack.reviewer.username }}</p>
+        </div>
+        <div class="text-center text-white">
+            <p><a href="{% url 'snack_list' %} " class="w-full bg-blue-400 hover:bg-blue-300 text-white py-2 px-4 rounded-full inline-block transition-colors duration-300">Back to Snack List</a></p>
+        </div>
+    </div>
 {% endblock %}
